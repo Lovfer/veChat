@@ -1,5 +1,5 @@
-#ifndef _VISERVER_H_
-#define _VISERVER_H_
+#ifndef _VESERVER_H_
+#define _VESERVER_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -68,4 +68,4 @@ class Chat_Session:public Session_Init
 
 bool init_flag=false;
 
-#endif // !_VISERVER_H_
+#endif // !_VESERVER_H_

@@ -1,4 +1,4 @@
-#include "viServer.h"
+#include "veServer.h"
 
 PUSER_LIST Chat_Session::Add_Node(struct sockaddr_in *paddr)
 {
@@ -196,7 +196,7 @@ void Chat_Session::Chat_Online()
         msg.m_name[NAME_LENGTH-1]='\0';
         msg.m_message[TEXT_LENGTH-1]='\0';
         cout<<"7.服务器后台消息print："<<endl;
-        fprintf(stdout, "  msg is [%s:%d] => [%d:%s:%s]\n", inet_ntoa(addr.sin_addr),
+        fprintf(stdout, "  msg is [%s:%d] => [%d:%s:%s]", inet_ntoa(addr.sin_addr),
                           ntohs(addr.sin_port), msg.m_type, msg.m_name, msg.m_message);
         cout<<endl<<endl;
         
@@ -225,7 +225,7 @@ void Chat_Session::Chat_Online()
             {
                 fprintf(stdout,"Switch()里的消息类型:",msg.m_type);
                 cout <<"发生错误"<<endl;
-                fprintf(stderr, "msg is error! [%s:%d] => [%d:%s:%s]\n", inet_ntoa(addr.sin_addr),
+                fprintf(stderr, "msg is error! [%s:%d] => [%d:%s:%s]", inet_ntoa(addr.sin_addr),
                     ntohs(addr.sin_port), msg.m_type, msg.m_name, msg.m_message);
                 User_Quit(head,sockfd,&addr,&msg);
                 break;

@@ -1,5 +1,5 @@
-#ifndef _VICLIENT_H_
-#define _VICLIENT_H_
+#ifndef _VECLIENT_H_
+#define _VECLIENT_H_
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -66,4 +66,4 @@ class Chat_Session:public Session_Init
         pid_t pid;
 };
 
-#endif // !_VICLIENT_H_
+#endif // !_VECLIENT_H_

@@ -1,4 +1,4 @@
-#include "viClient.h"
+#include "veClient.h"
 
 // import extern function
 extern void function_help(char *arg_value);
@@ -83,7 +83,7 @@ void Chat_Session::Chat_Online(char *user_name)
         signal(SIGCHLD,SIG_IGN);
         while(fgets(msg.m_message,MESSAGE_LENGTH,stdin))
         {
-            if(strcmp(msg.m_message,"quit\n")==0)
+            if(strcmp(msg.m_message,"quit")==0)
             {
                 msg.m_type=3;
                 sendto(sockfd,&msg,sizeof(msg),0,(struct sockaddr*)&server_addr,addr_len);
