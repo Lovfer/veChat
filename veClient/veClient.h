@@ -15,8 +15,20 @@
 #include <iostream>
 using namespace std;
 
-#define NAME_LENGTH 32
 #define MESSAGE_LENGTH 512
+#define NAME_LENGTH 60
+#define IP_LENGTH 32
+#define PORT_LENGTH 16
+
+#define CONNECCT_STATUS_NORMAL "normal"
+#define CONNECCT_STATUS_ERROR  "error"
+
+char G_User_Name[NAME_LENGTH];
+char G_IP_Addr[IP_LENGTH];
+char G_Port[PORT_LENGTH];
+
+//initial value=false
+bool init_flag=false;
 
 // ERR_CODE
 #define _ERR_EXIT -1
@@ -48,7 +60,7 @@ class Session_Init
 {
     public:
         Session_Init();
-        //void Socket_Init();
+        ~Session_Init();
         int Get_Sockfd();
         struct sockaddr_in Get_Addr();
     private:
@@ -60,10 +72,12 @@ class Session_Init
 class Chat_Session:public Session_Init
 {
     public:
-        //Chat_Session(){};
+        Chat_Session();
+        ~Chat_Session();
         void Chat_Online(char *user_name);
     private:
         pid_t pid;
+        int ret;
 };
 
 #endif // !_VECLIENT_H_
